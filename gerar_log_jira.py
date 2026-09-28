@@ -45,8 +45,8 @@ def status_disponiveis_por_tipo(tipo: str) -> list[str]:
     if tipo == "INICIATIVE":
         return list(STATUS_INICIATIVE)
     if tipo in {"BUG", "BUG SUBTASK"}:
-        return list(STATUS_PADRAO[:-2] + STATUS_BUG)
-    return list(STATUS_PADRAO[:-2])
+        return list(STATUS_PADRAO[:-2] + STATUS_BUG + STATUS_PADRAO[-2:])
+    return list(STATUS_PADRAO)
 
 
 def transicoes_status(card: dict[str, str]) -> list[tuple[str, str]]:
